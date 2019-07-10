@@ -19,32 +19,32 @@ $(function() {
 	$(window).resize(onResize);
 
 
-	// window.isTourMode = false;
+	 window.isTourMode = false;
 
-	// if (window.location.hash == '#tour') {
-	// 	$('body').addClass('tour');
-	// 	window.isTourMode = true;
-	// }
-	// else {
-	// 	$('body').removeClass('tour');
-	// 	window.isTourMode = false;
-	// 	// $('#map').css({position:'absolute'});
-	// }
+	 if (window.location.hash == '#tour') {
+	 	$('body').addClass('tour');
+	 	window.isTourMode = true;
+	 }
+	 else {
+	 	$('body').removeClass('tour');
+	 	window.isTourMode = false;
+	 	 $('#map').css({position:'absolute'});
+	 }
 
-	// $(window).on('hashchange', function() {
-	// 	if (window.location.hash == '#tour') {
-	// 		$('body').addClass('tour');
-	// 		$('#map').css({position:'relative'});
-	// 		window.isTourMode = true;
-	// 		var x = locations.findWhere({ type: 'Nuclear Waste' }); 
-	// 		Vent.trigger('location:clicked', x, true);
-	// 	}
-	// 	else {
-	// 		$('body').removeClass('tour');	
-	// 		$('#map').css({position:'absolute'});
-	// 		window.isTourMode = false;
-	// 	}
-	// });
+	 $(window).on('hashchange', function() {
+	 	if (window.location.hash == '#tour') {
+	 		$('body').addClass('tour');
+	 		$('#map').css({position:'relative'});
+	 		window.isTourMode = true;
+	 		var x = locations.findWhere({ type: 'Nuclear Waste' }); 
+	 		Vent.trigger('location:clicked', x, true);
+	 	}
+	 	else {
+	 		$('body').removeClass('tour');	
+	 		$('#map').css({position:'absolute'});
+	 		window.isTourMode = false;
+	 	}
+	 });
 	
 	var currentMarker;
 	
@@ -279,7 +279,7 @@ $(function() {
 
 		render: function() {
 
-			// Function to update coordination info windows
+			// Function to update coordination information windows
 		    function updateCoordinationWindow(markerobject){
 		        // Create new info window
 				var infoWindow = new google.maps.InfoWindow;
@@ -410,23 +410,23 @@ $(function() {
 		},
 
 		popupLocation: function(location, panTo) {
-			// if (window.isTourMode) {
-			// 	$('#tour-info').html(this.popupTemplate(location.toJSON()));
-			// 	var n = locations.at(locations.indexOf(location) + 1);
-			// 	if (n) {
-			// 		$('#tour-next').text(n.get('title'));
-			// 	}
-			// 	var p = locations.at(locations.indexOf(location) - 1);
-			// 	if (p) {
-			// 		$('#tour-prev').text(p.get('title'));
-			// 	}
+			 if (window.isTourMode) {
+			 	$('#tour-info').html(this.popupTemplate(location.toJSON()));
+			 	var n = locations.at(locations.indexOf(location) + 1);
+			 	if (n) {
+			 		$('#tour-next').text(n.get('title'));
+			 	}
+			 	var p = locations.at(locations.indexOf(location) - 1);
+			 	if (p) {
+			 		$('#tour-prev').text(p.get('title'));
+			 	}
 
-			// 	if (panTo) {
-			// 		this.map.panTo(location.get('marker').getPosition());
-			// 		this.map.setZoom(5);
-			// 	}
-			// }
-			// else {
+			 	if (panTo) {
+			 		this.map.panTo(location.get('marker').getPosition());
+			 		this.map.setZoom(5);
+			 	}
+			 }
+			 else {
 
 				var infoWindow = new google.maps.InfoWindow({
 					content: this.popupTemplate(location.toJSON()),
@@ -447,7 +447,7 @@ $(function() {
 
 				this.closePopupLocation();
 				this.currentInfoWindow = infoWindow;
-			// }
+			 }
 		},
 
 		closePopupLocation: function() {
